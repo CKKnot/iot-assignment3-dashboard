@@ -10,11 +10,11 @@ import Header from "./components/Header";
 import WebSocketTransport from '@cubejs-client/ws-transport';
 //Cubejs initialization; Websocket initialization
 const CUBEJS_TOKEN =
-  "6bd9ce4c0809c78ad2cffd4d59f5b744f915f5d4cb891cedf614a1d70558cb9a0af9ca1a0f1dae17a5f32d9d024012774142c5b15cc974a1e3f3dbbbb71121a8";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTI0NTQxMDksImV4cCI6MTY3ODc2NzcwOX0.dGWL3KBcx7vu5FYzl6eMkaVTKDuaw43wvRv0kPt5QrM";
 var ws = new WebSocketTransport({
   authorization: CUBEJS_TOKEN,
   // apiUrl: "wss://7be9a22c.ap.ngrok.io",
-  apiUrl: "ws://localhost:4000",
+  apiUrl: "ws://ec2-54-158-151-199.compute-1.amazonaws.com:4000",
   hearBeatInterval: 5
 });
 var cubejsApi = cubejs({

@@ -1,3 +1,4 @@
+
 import React from "react";
 import ReactDOM from "react-dom";
 import Grid from "@material-ui/core/Grid";
@@ -67,38 +68,46 @@ var DashboardItems = [
   },
   {
      "id":3,
-     "name":"Average Soil Moisture",
+     "name":"Light Intensity 2",
      "vizState":{
         "query":{
            "measures":[
-              "Sensor.averageSoilMoisture"
+              "Sensor.lightIntensity2"
            ],
            "timeDimensions":[
               {
                  "dimension":"Sensor.timestamp",
-                 "granularity":"hour"
+                 "granularity": "second"
               }
-           ]
+           ],
+           "order":{
+              "Sensor.timestamp":"desc"
+           },
+           "limit":1
         },
-        "chartType":"line"
+        "chartType":"number"
      }
   },
   {
      "id":4,
-     "name":"Average Light Intensity",
+     "name":"Ambient Temperature",
      "vizState":{
         "query":{
            "measures":[
-              "Sensor.averageLightIntensity"
+              "Sensor.ambientTemperature"
            ],
            "timeDimensions":[
               {
                  "dimension":"Sensor.timestamp",
-                 "granularity":"hour"
+                 "granularity": "second"
               }
-           ]
+           ],
+           "order":{
+              "Sensor.timestamp":"desc"
+           },
+           "limit":1
         },
-        "chartType":"line"
+        "chartType":"number"
      }
   },
   {
@@ -141,6 +150,60 @@ var DashboardItems = [
            }
         },
         "chartType":"number"
+     }
+  },
+  {
+     "id":7,
+     "name":"Soil Moisture",
+     "vizState":{
+        "query":{
+           "measures":[
+              "Sensor.averageSoilMoisture"
+           ],
+           "timeDimensions":[
+              {
+                 "dimension":"Sensor.timestamp",
+                 "granularity":"hour"
+              }
+           ]
+        },
+        "chartType":"line"
+     }
+  },
+  {
+     "id":8,
+     "name":"Light Intensity",
+     "vizState":{
+        "query":{
+           "measures":[
+              "Sensor.averageLightIntensity"
+           ],
+           "timeDimensions":[
+              {
+                 "dimension":"Sensor.timestamp",
+                 "granularity":"hour"
+              }
+           ]
+        },
+        "chartType":"line"
+     }
+  },
+  {
+     "id":9,
+     "name":"Ambient Temperature",
+     "vizState":{
+        "query":{
+           "measures":[
+              "Sensor.averageAmbientTemperature"
+           ],
+           "timeDimensions":[
+              {
+                 "dimension":"Sensor.timestamp",
+                 "granularity":"hour"
+              }
+           ]
+        },
+        "chartType":"line"
      }
   }
 ];

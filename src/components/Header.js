@@ -59,7 +59,7 @@ const Header = ({ location }) => {
         }
         setSeconds(badgeContent => intruderCount + wateringCount);
       }, 1000);
-    }, 10000);
+    }, 20000);
     return () => null;
   }, []);
 
