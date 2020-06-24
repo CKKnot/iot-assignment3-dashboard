@@ -9,7 +9,6 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-var tempMeasures = [];
 const COLORS_SERIES = [
   "#7A77FF",
   "#141446",

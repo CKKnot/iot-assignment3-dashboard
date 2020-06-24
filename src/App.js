@@ -1,9 +1,7 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import "./body.css";
 import { makeStyles } from "@material-ui/core/styles";
-import { Layout } from "antd";
 import cubejs from "@cubejs-client/core";
 import { CubeProvider } from "@cubejs-client/react";
 import Header from "./components/Header";
@@ -11,10 +9,11 @@ import WebSocketTransport from '@cubejs-client/ws-transport';
 //Cubejs initialization; Websocket initialization
 const CUBEJS_TOKEN =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1OTI0NTQxMDksImV4cCI6MTY3ODc2NzcwOX0.dGWL3KBcx7vu5FYzl6eMkaVTKDuaw43wvRv0kPt5QrM";
+const CUBE_API_URL = "10.10.0.1:4000";
+//const CUBE_API_URL = "ec2-54-158-151-199.compute-1.amazonaws.com:4000"
 var ws = new WebSocketTransport({
   authorization: CUBEJS_TOKEN,
-  // apiUrl: "wss://7be9a22c.ap.ngrok.io",
-  apiUrl: "ws://ec2-54-158-151-199.compute-1.amazonaws.com:4000",
+  apiUrl: "ws://" + CUBE_API_URL,
   hearBeatInterval: 5
 });
 var cubejsApi = cubejs({

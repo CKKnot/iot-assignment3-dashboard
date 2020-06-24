@@ -16,7 +16,7 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Divider from '@material-ui/core/Divider';
 const moment = require('moment');
 
-var  wateringCount = 0, intruderCount = 0, oldwC = 0, oldiC = 0, latestWateringDate = "", latestIntruderDate = "";
+var  wateringCount = 0, intruderCount = 0, latestWateringDate = "", latestIntruderDate = "";
 
 const theme = createMuiTheme({
   palette: {
@@ -46,10 +46,9 @@ const Header = ({ location }) => {
   };
 
   useEffect(() => {
-    const interval = 
     setTimeout(() => {
       setInterval(() => {
-        if(intruderCount != parseInt(document.getElementById('Sensor.intruderCount').textContent)){
+        if(intruderCount !== parseInt(document.getElementById('Sensor.intruderCount').textContent)){
           intruderCount = parseInt(document.getElementById('Sensor.intruderCount').textContent) ? parseInt(document.getElementById('Sensor.intruderCount').textContent) : 0;
           latestIntruderDate = moment().format('YYYY, MMM, DD, HH:mm');
         }
